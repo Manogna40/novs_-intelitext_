@@ -13,4 +13,18 @@ def render_home(request):
 
 
 def get_suggestions(request):
-    return JsonResponse( {'data':['suggestion1','suggestion2','suggestion3','suggestion4','suggestion5','suggestion6','suggestion7']})
+    return JsonResponse( {'data':['suggestion1','suggestion2','''suggestion3  
+    suggestion3 suggestion3 
+    suggestion3 suggestion3
+    suggestion3 suggestion3 suggestion3 suggestion3  
+    suggestion3 suggestion3 
+    suggestion3 suggestion3
+    suggestion3 suggestion3 suggestion3 suggestion3  
+    suggestion3 suggestion3 
+    suggestion3 suggestion3
+    suggestion3 suggestion3 suggestion3 suggestion3  
+    suggestion3 suggestion3 
+    suggestion3 suggestion3
+    suggestion3 suggestion3 suggestion3''','suggestion4','suggestion5','suggestion6','suggestion7']})
+    
+    

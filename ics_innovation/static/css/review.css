@@ -22,7 +22,7 @@ margin-left: 35px;
 }
 .card.preview-selected-documents,.card.preview-selected-documents.selected{
 Width: 351px;
-Height: 81px;
+min-Height: 81px;
 margin-top: 11px;
 margin-left: 39.5px;
 background-color: #F8F9FF;
@@ -70,11 +70,6 @@ font-size: 9px;
 .entity-text-preview{
 font-size: 12px;
 margin-top: 6px;
-text-overflow: ellipsis;
-word-break: break-all;
-overflow: hidden;
-white-space: nowrap;
-
 }
 
 .text_area_{
