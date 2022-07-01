@@ -81,6 +81,7 @@ margin-top: 6px;
   border-radius: 7px;
   border: 1px solid black;
   padding: 15px;
+  overflow: scroll;
 }
 .suggested_text{
 color: darkgray;
