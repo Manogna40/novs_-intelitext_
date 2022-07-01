@@ -47,7 +47,7 @@ function preview_page_content(current_data) {
         }
         modal_content =
           modal_content +
-          `<p class='entity-text-preview' title='${data[doc]}' >${data[doc]}</p>
+          `<p class='entity-text-preview' >${data[doc]}</p>
               </div>`;
       }
       modal_content = modal_content + `</div>`;
