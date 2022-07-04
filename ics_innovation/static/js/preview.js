@@ -37,7 +37,7 @@ function preview_page_content(current_data) {
           modal_content =
             modal_content +
             `<div class="card preview-selected-documents selected" data-slected-class="${data[doc]}">`;
-            markup=`&nbsp<span class='suggested_text'>${data[doc]}</span>`
+            markup=`<span class='suggested_text'>  ${data[doc]}</span>`
             // event_.target.innerHTML = markup;
             $('#text_area_input').append(markup)
           } else {
@@ -76,7 +76,7 @@ text_box.on('keydown', function (event) {
     if(name=='Tab'|| name=='ArrowRight'){
       chunks = event.target.innerText;
       event.target.innerText=chunks
-      $('.suggested_text').text(' ')
+      $('.suggested_text').text('')
       update_html('', ".entity-container");
       event.preventDefault();
     
@@ -86,7 +86,7 @@ text_box.on('keydown', function (event) {
     //   update_html('', ".entity-container");
     // }
     else{
-      $('.suggested_text').text(' ')
+      $('.suggested_text').text('')
       update_html('', ".entity-container");
     }
 
@@ -128,8 +128,6 @@ $(() => {
 //move cursor to end
 $(function( cursorManager ) {
 
-  //From: http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
-  var voidNodeTags = ['AREA', 'BASE', 'BR', 'COL', 'EMBED', 'HR', 'IMG', 'INPUT', 'KEYGEN', 'LINK', 'MENUITEM', 'META', 'PARAM', 'SOURCE', 'TRACK', 'WBR', 'BASEFONT', 'BGSOUND', 'FRAME', 'ISINDEX'];
 
   //From: https://stackoverflow.com/questions/237104/array-containsobj-in-javascript
   Array.prototype.contains = function(obj) {
@@ -142,14 +140,6 @@ $(function( cursorManager ) {
       return false;
   }
 
-  //Basic idea from: https://stackoverflow.com/questions/19790442/test-if-an-element-can-contain-text
-  function canContainText(node) {
-      if(node.nodeType == 1) { //is an element node
-          return !voidNodeTags.contains(node.nodeName);
-      } else { //is not an element node
-          return false;
-      }
-  };
 
   function getLastChildElement(el){
       var lc = el.lastChild;
@@ -166,8 +156,7 @@ $(function( cursorManager ) {
   cursorManager.setEndOfContenteditable = function(contentEditableElement)
   {
 
-      while(getLastChildElement(contentEditableElement) &&
-            canContainText(getLastChildElement(contentEditableElement))) {
+      while(getLastChildElement(contentEditableElement)) {
           contentEditableElement = getLastChildElement(contentEditableElement);
       }
 
