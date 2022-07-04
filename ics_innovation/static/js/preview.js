@@ -81,6 +81,15 @@ text_box.on('keydown', function (event) {
       event.preventDefault();
     
     }
+    // if(name=='Backspace'){
+    //   $('.suggested_text').text(' ')
+    //   update_html('', ".entity-container");
+    // }
+    else{
+      $('.suggested_text').text(' ')
+      update_html('', ".entity-container");
+    }
+
 });
 
 //user is "finished typing," do something
@@ -98,6 +107,7 @@ function doneTyping () {
 
 }
 
+// prevents default tab function for entire page
 document.addEventListener('keydown', (event) => {
     var name = event.key;
     if(name=='Tab'){
